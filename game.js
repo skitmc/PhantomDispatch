@@ -1,6 +1,6 @@
 let currentLife = null;
 
-// LOAD LIFE
+// LOAD
 function loadLife(slot) {
   let data = localStorage.getItem("life" + slot);
 
@@ -8,7 +8,7 @@ function loadLife(slot) {
     currentLife = JSON.parse(data);
     enterMainMenu();
   } else {
-    alert("No life found. Create one.");
+    alert("NO FILE FOUND");
   }
 }
 
@@ -18,25 +18,28 @@ function openCreateLife() {
   document.getElementById("createLife").classList.remove("hidden");
 }
 
-// SAVE LIFE
+// SAVE LIFE (FIRST + LAST NAME)
 function saveLife() {
-  let name = document.getElementById("playerName").value;
+  let first = document.getElementById("firstName").value;
+  let last = document.getElementById("lastName").value;
   let character = document.getElementById("characterSelect").value;
 
-  if(!name) return alert("Enter a name!");
+  if(!first || !last) {
+    alert("ENTER FULL NAME");
+    return;
+  }
 
   currentLife = {
-    name: name,
+    firstName: first,
+    lastName: last,
     character: character,
     money: 0,
     progress: 0
   };
 
-  // find empty slot
   for(let i = 1; i <= 3; i++) {
     if(!localStorage.getItem("life" + i)) {
       localStorage.setItem("life" + i, JSON.stringify(currentLife));
-      alert("Life saved in slot " + i);
       break;
     }
   }
@@ -46,18 +49,18 @@ function saveLife() {
 
 // MAIN MENU
 function enterMainMenu() {
-  document.getElementById("lifeSelect").classList.add("hidden");
-  document.getElementById("createLife").classList.add("hidden");
+  hideAll();
+
   document.getElementById("mainMenu").classList.remove("hidden");
 
   document.getElementById("welcomeText").innerText =
-    "Welcome " + currentLife.name + " (" + currentLife.character + ")";
+    "AGENT: " + currentLife.firstName + " " + currentLife.lastName;
 }
 
 // START GAME
 function startGame() {
-  alert("Loading Phantom Dispatch...");
-  window.location.href = "game.html"; // later you’ll make this
+  alert("CONNECTING TO DISPATCH...");
+  window.location.href = "game.html";
 }
 
 // INFO / CREDITS
@@ -80,11 +83,10 @@ function hideAll() {
   document.querySelectorAll("#menu > div").forEach(d => d.classList.add("hidden"));
 }
 
-// DELETE LIFE
+// DELETE
 function resetLife() {
   for(let i = 1; i <= 3; i++) {
     localStorage.removeItem("life" + i);
   }
-  alert("All lives deleted");
   location.reload();
 }

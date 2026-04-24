@@ -1,31 +1,93 @@
 body {
+  margin: 0;
   background: black;
-  color: white;
-  font-family: Arial;
+  color: #d1d1d1;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+/* flicker scanlines */
+.scanlines {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(0,0,0,0.05) 2px
+  );
+  pointer-events: none;
+}
+
+/* dark vignette edges */
+.vignette {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 200px black;
+  pointer-events: none;
+}
+
+/* main terminal box */
+.terminal {
+  width: 60%;
+  margin: 5% auto;
+  padding: 30px;
+  background: rgba(10,10,10,0.9);
+  border: 1px solid #333;
   text-align: center;
 }
 
-button {
+/* glow title */
+.glow {
+  color: #ff3b3b;
+  text-shadow: 0 0 10px red;
+}
+
+.sub {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* inputs */
+input, select {
+  width: 80%;
   padding: 10px;
   margin: 5px;
-  background: #222;
+  background: black;
   color: white;
-  border: 1px solid #555;
-  cursor: pointer;
+  border: 1px solid #444;
 }
 
-.hidden {
-  display: none;
-}
-
-#menu {
-  margin-top: 50px;
-}
-
-input, select {
+/* buttons */
+button {
   padding: 10px;
   margin: 5px;
   background: #111;
   color: white;
   border: 1px solid #444;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #222;
+  border-color: red;
+}
+
+/* big main buttons */
+.bigBtn {
+  width: 85%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid red;
+}
+
+/* grid */
+.slotGrid {
+  display: flex;
+  justify-content: center;
+}
+.hidden {
+  display: none;
 }

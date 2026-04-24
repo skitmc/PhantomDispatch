@@ -6,63 +6,66 @@
 </head>
 <body>
 
-<div id="menu">
+<div class="scanlines"></div>
+<div class="vignette"></div>
 
-  <h1>👻 Phantom Dispatch</h1>
+<div id="menu" class="terminal">
+
+  <h1 class="glow">👻 PHANTOM DISPATCH</h1>
+  <p class="sub">Paranormal Investigation Network</p>
 
   <!-- LIFE SELECT -->
   <div id="lifeSelect">
-    <h2>Select a Life</h2>
+    <h2>SELECT INVESTIGATOR FILE</h2>
 
-    <button onclick="loadLife(1)">Life 1</button>
-    <button onclick="loadLife(2)">Life 2</button>
-    <button onclick="loadLife(3)">Life 3</button>
+    <div class="slotGrid">
+      <button onclick="loadLife(1)">FILE 01</button>
+      <button onclick="loadLife(2)">FILE 02</button>
+      <button onclick="loadLife(3)">FILE 03</button>
+    </div>
 
-    <button onclick="openCreateLife()">➕ Create New Life</button>
+    <button class="bigBtn" onclick="openCreateLife()">+ CREATE NEW FILE</button>
+  </div>
+
+  <!-- CREATE LIFE -->
+  <div id="createLife" class="hidden">
+    <h2>CREATE INVESTIGATOR</h2>
+
+    <input id="firstName" placeholder="FIRST NAME">
+    <input id="lastName" placeholder="LAST NAME">
+
+    <select id="characterSelect">
+      <option value="hunter">GHOST HUNTER</option>
+      <option value="investigator">FIELD INVESTIGATOR</option>
+      <option value="rookie">ROOKIE</option>
+    </select>
+
+    <button class="bigBtn" onclick="saveLife()">SAVE FILE</button>
   </div>
 
   <!-- MAIN MENU -->
   <div id="mainMenu" class="hidden">
     <h2 id="welcomeText"></h2>
 
-    <button onclick="startGame()">▶ Play / Continue Phantom Dispatch</button>
-    <button onclick="showInfo()">ℹ Info</button>
-    <button onclick="showCredits()">🎬 Credits</button>
-    <button onclick="resetLife()">🗑 Delete Life</button>
-  </div>
-
-  <!-- CREATE LIFE -->
-  <div id="createLife" class="hidden">
-    <h2>Create Your Investigator</h2>
-
-    <input id="playerName" placeholder="Enter Name">
-
-    <select id="characterSelect">
-      <option value="hunter">Ghost Hunter</option>
-      <option value="investigator">Investigator</option>
-      <option value="rookie">Rookie</option>
-    </select>
-
-    <br><br>
-    <button onclick="saveLife()">Save Life</button>
+    <button class="bigBtn" onclick="startGame()">▶ CONTINUE DISPATCH</button>
+    <button onclick="showInfo()">INFO</button>
+    <button onclick="showCredits()">CREDITS</button>
+    <button onclick="resetLife()">DELETE FILE</button>
   </div>
 
   <!-- INFO -->
   <div id="info" class="hidden">
-    <h2>Info</h2>
-    <p>
-      You are a paranormal investigator taking jobs, collecting evidence,
-      and reporting ghost activity through Phantom Dispatch.
-    </p>
-    <button onclick="backMenu()">Back</button>
+    <h2>INFO</h2>
+    <p>You are a contracted paranormal investigator responding to classified hauntings.</p>
+    <button onclick="backMenu()">BACK</button>
   </div>
 
   <!-- CREDITS -->
   <div id="credits" class="hidden">
-    <h2>Credits</h2>
-    <p>Phantom Dispatch - Indie Horror Project</p>
-    <p>Created by You 👻</p>
-    <button onclick="backMenu()">Back</button>
+    <h2>CREDITS</h2>
+    <p>PHANTOM DISPATCH — CASE FILE SYSTEM</p>
+    <p>CREATED BY SKITMC</p>
+    <button onclick="backMenu()">BACK</button>
   </div>
 
 </div>
