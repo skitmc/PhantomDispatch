@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Oakwood Mansion",
+    "neighborhood": "Oakwood",
+    "danger": "High"
+  },
+  {
+    "id": 2,
+    "name": "Raven Street Home",
+    "neighborhood": "Raven Street",
+    "danger": "Medium"
+  },
+  {
+    "id": 3,
+    "name": "Forsaken Factory",
+    "neighborhood": "Industrial Park",
+    "danger": "Critical"
+  },
+  {
+    "id": 4,
+    "name": "Foggy Road Cabin",
+    "neighborhood": "Misty Hollow",
+    "danger": "Medium"
+  },
+  {
+    "id": 5,
+    "name": "Abandoned Motel",
+    "neighborhood": "Route 7",
+    "danger": "High"
+  }
+]

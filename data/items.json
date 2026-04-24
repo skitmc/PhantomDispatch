@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Flashlight",
+    "category": "tool",
+    "effect": "Show hidden details",
+    "cost": 0
+  },
+  {
+    "id": 2,
+    "name": "EMF Reader",
+    "category": "tool",
+    "effect": "Detect EMF Level 5",
+    "cost": 200
+  },
+  {
+    "id": 3,
+    "name": "Spirit Box",
+    "category": "tool",
+    "effect": "Catch spirit responses",
+    "cost": 300
+  },
+  {
+    "id": 4,
+    "name": "Salt",
+    "category": "tool",
+    "effect": "Reveal footprints and salt interaction",
+    "cost": 150
+  },
+  {
+    "id": 5,
+    "name": "Night Vision Camera",
+    "category": "tool",
+    "effect": "See in the dark",
+    "cost": 350
+  },
+  {
+    "id": 6,
+    "name": "Ghost Lure",
+    "category": "tool",
+    "effect": "Increase ghost activity",
+    "cost": 250
+  },
+  {
+    "id": 7,
+    "name": "Writing Book",
+    "category": "tool",
+    "effect": "Capture ghost writing",
+    "cost": 180
+  }
+]

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phantom Dispatch - Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="headerTitle">
+        <div>
+          <h1>PHANTOM DISPATCH</h1>
+          <p>Investigate haunted houses, drive through the neighborhood, and use your phone to manage every mission.</p>
+        </div>
+        <div class="profileSummary">
+          <p><span class="smallLabel">Agent</span> <strong id="playerName">Loading...</strong></p>
+          <p><span class="smallLabel">Balance</span> $<span id="playerBalance">0</span></p>
+          <p><span class="smallLabel">Difficulty</span> <span id="playerDifficulty">Medium</span></p>
+        </div>
+      </div>
+      <div class="headerActions">
+        <button onclick="showSection('hub')">Hub</button>
+        <button onclick="showPhoneTab('dispatch')">Phone</button>
+        <button onclick="showSection('garage')">Garage</button>
+        <button onclick="showSection('storage')">Storage</button>
+        <button onclick="showSection('settings')">Settings</button>
+        <button class="exitBtn" onclick="exitLife()">Exit Life</button>
+      </div>
+    </header>
+
+    <main id="gameRoot">
+      <section id="hub" class="panel activePanel">
+        <h2>House Hub</h2>
+        <p>Your home hub is the base of operations. Use the phone to take jobs and review the neighborhood.</p>
+        <div class="quickGrid">
+          <button onclick="showPhoneTab('dispatch')">Open Dispatch</button>
+          <button onclick="showPhoneTab('map')">Open Map</button>
+          <button onclick="showPhoneTab('inventory')">Equipment</button>
+        </div>
+        <div class="hubStatus">
+          <div><strong>Current Job:</strong> <span id="currentJobLabel">None</span></div>
+          <div><strong>Assigned House:</strong> <span id="currentHouseLabel">None</span></div>
+          <div><strong>Selected Vehicle:</strong> <span id="selectedVehicleLabel">None</span></div>
+        </div>
+      </section>
+
+      <section id="phone" class="panel hidden">
+        <div class="phoneShell">
+          <aside class="phoneMenu">
+            <button onclick="showPhoneTab('dispatch')">Dispatch</button>
+            <button onclick="showPhoneTab('map')">Map</button>
+            <button onclick="showPhoneTab('inventory')">Inventory</button>
+            <button onclick="showPhoneTab('reports')">Reports</button>
+          </aside>
+          <div class="phoneContent">
+            <div id="dispatchTab" class="phoneTab hidden"></div>
+            <div id="mapTab" class="phoneTab hidden"></div>
+            <div id="inventoryTab" class="phoneTab hidden"></div>
+            <div id="reportsTab" class="phoneTab hidden"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="garage" class="panel hidden">
+        <h2>Garage</h2>
+        <p>Select your vehicle and manage your fleet.</p>
+        <div id="garageList" class="itemGrid"></div>
+      </section>
+
+      <section id="storage" class="panel hidden">
+        <h2>Storage</h2>
+        <p>Purchase tools and keep track of your equipment.</p>
+        <div id="storageList" class="itemGrid"></div>
+      </section>
+
+      <section id="investigation" class="panel hidden">
+        <h2>Investigation</h2>
+        <p>Collect evidence and submit your ghost report.</p>
+        <div class="investigationInfo">
+          <div><strong>Ghost:</strong> <span id="ghostName">Unknown</span></div>
+          <div><strong>Evidence Collected:</strong></div>
+          <ul id="collectedEvidence"></ul>
+        </div>
+        <div class="itemGrid" id="toolButtons"></div>
+        <div class="investigationActions">
+          <button onclick="submitReport()">Submit Report</button>
+          <button onclick="returnToHub()">Return to Hub</button>
+        </div>
+        <div id="investigationMessage" class="messageBox"></div>
+      </section>
+
+      <section id="settings" class="panel hidden">
+        <h2>Settings</h2>
+        <div class="settingsGrid">
+          <label>FOV <span id="fovLabel">90</span>
+            <input id="fovSlider" type="range" min="60" max="120" value="90" oninput="updateSettingLabel('fov')">
+          </label>
+          <label>Sensitivity <span id="sensitivityLabel">1.0</span>
+            <input id="sensitivitySlider" type="range" min="0.4" max="2.0" step="0.1" value="1.0" oninput="updateSettingLabel('sensitivity')">
+          </label>
+          <label>Graphics Quality
+            <select id="graphicsQuality"></select>
+          </label>
+          <label><input id="minimapToggle" type="checkbox"> Minimap</label>
+          <label><input id="fullscreenToggle" type="checkbox"> Fullscreen</label>
+          <button class="bigBtn" onclick="saveSettings()">Save Settings</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="game-footer">Use the phone system to accept jobs, travel, and report back from investigations.</footer>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

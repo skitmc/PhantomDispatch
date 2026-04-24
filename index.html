@@ -1,75 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phantom Dispatch</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="scanlines"></div>
-<div class="vignette"></div>
-
-<div id="menu" class="terminal">
-
-  <h1 class="glow">👻 PHANTOM DISPATCH</h1>
-  <p class="sub">Paranormal Investigation Network</p>
-
-  <!-- LIFE SELECT -->
-  <div id="lifeSelect">
-    <h2>SELECT INVESTIGATOR FILE</h2>
-
-    <div class="slotGrid">
-      <button onclick="loadLife(1)">FILE 01</button>
-      <button onclick="loadLife(2)">FILE 02</button>
-      <button onclick="loadLife(3)">FILE 03</button>
+  <div class="startup-screen">
+    <div class="titleCard">
+      <h1>PHANTOM DISPATCH</h1>
+      <p>Horror investigation dispatch simulator. Choose a life slot and build your ghost hunting career.</p>
     </div>
-
-    <button class="bigBtn" onclick="openCreateLife()">+ CREATE NEW FILE</button>
+    <div class="contentCard">
+      <section id="lifeSelect" class="panel">
+        <h2>Select Investigator File</h2>
+        <div class="slotGrid" id="slotGrid"></div>
+        <button class="bigBtn" onclick="openCreateLife()">+ CREATE NEW FILE</button>
+      </section>
+      <section id="createLife" class="panel hidden">
+        <h2>Create Investigator</h2>
+        <input id="firstName" type="text" placeholder="First Name" autocomplete="off">
+        <input id="lastName" type="text" placeholder="Last Name" autocomplete="off">
+        <label>Starting Balance</label>
+        <input id="startingBalance" type="number" min="0" value="500">
+        <label>Difficulty</label>
+        <select id="difficultySelect">
+          <option value="Easy">Easy</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+        <div class="buttonRow">
+          <button class="bigBtn" onclick="saveLife()">SAVE & START</button>
+          <button class="smallBtn" onclick="backMenu()">CANCEL</button>
+        </div>
+      </section>
+    </div>
   </div>
-
-  <!-- CREATE LIFE -->
-  <div id="createLife" class="hidden">
-    <h2>CREATE INVESTIGATOR</h2>
-
-    <input id="firstName" placeholder="FIRST NAME">
-    <input id="lastName" placeholder="LAST NAME">
-
-    <select id="characterSelect">
-      <option value="hunter">GHOST HUNTER</option>
-      <option value="investigator">FIELD INVESTIGATOR</option>
-      <option value="rookie">ROOKIE</option>
-    </select>
-
-    <button class="bigBtn" onclick="saveLife()">SAVE FILE</button>
-  </div>
-
-  <!-- MAIN MENU -->
-  <div id="mainMenu" class="hidden">
-    <h2 id="welcomeText"></h2>
-
-    <button class="bigBtn" onclick="startGame()">▶ CONTINUE DISPATCH</button>
-    <button onclick="showInfo()">INFO</button>
-    <button onclick="showCredits()">CREDITS</button>
-    <button onclick="resetLife()">DELETE FILE</button>
-  </div>
-
-  <!-- INFO -->
-  <div id="info" class="hidden">
-    <h2>INFO</h2>
-    <p>You are a contracted paranormal investigator responding to classified hauntings.</p>
-    <button onclick="backMenu()">BACK</button>
-  </div>
-
-  <!-- CREDITS -->
-  <div id="credits" class="hidden">
-    <h2>CREDITS</h2>
-    <p>PHANTOM DISPATCH — CASE FILE SYSTEM</p>
-    <p>CREATED BY SKITMC</p>
-    <button onclick="backMenu()">BACK</button>
-  </div>
-
-</div>
-
-<script src="game.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Demon",
+    "aggression": 9,
+    "evidence": [
+      "EMF Level 5",
+      "Freezing Temperatures"
+    ],
+    "description": "Highly aggressive and fast."
+  },
+  {
+    "id": 2,
+    "name": "Spirit",
+    "aggression": 4,
+    "evidence": [
+      "Spirit Box responses",
+      "Ghost Writing"
+    ],
+    "description": "Balanced and quiet."
+  },
+  {
+    "id": 3,
+    "name": "Poltergeist",
+    "aggression": 6,
+    "evidence": [
+      "Footprints / Salt interaction",
+      "Ghost Writing"
+    ],
+    "description": "Object interaction focused."
+  },
+  {
+    "id": 4,
+    "name": "Wraith",
+    "aggression": 7,
+    "evidence": [
+      "EMF Level 5",
+      "Spirit Box responses"
+    ],
+    "description": "Teleports around the area."
+  },
+  {
+    "id": 5,
+    "name": "Phantom",
+    "aggression": 5,
+    "evidence": [
+      "Freezing Temperatures",
+      "Spirit Box responses"
+    ],
+    "description": "Disappears at close range."
+  }
+]

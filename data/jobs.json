@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Haunted House Investigation",
+    "baseReward": 500
+  },
+  {
+    "id": 2,
+    "title": "Abandoned Road Case",
+    "baseReward": 420
+  },
+  {
+    "id": 3,
+    "title": "Industrial Site Haunting",
+    "baseReward": 680
+  }
+]
