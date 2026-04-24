@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phantom Dispatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu">
+
+  <h1>👻 Phantom Dispatch</h1>
+
+  <!-- LIFE SELECT -->
+  <div id="lifeSelect">
+    <h2>Select a Life</h2>
+
+    <button onclick="loadLife(1)">Life 1</button>
+    <button onclick="loadLife(2)">Life 2</button>
+    <button onclick="loadLife(3)">Life 3</button>
+
+    <button onclick="openCreateLife()">➕ Create New Life</button>
+  </div>
+
+  <!-- MAIN MENU -->
+  <div id="mainMenu" class="hidden">
+    <h2 id="welcomeText"></h2>
+
+    <button onclick="startGame()">▶ Play / Continue Phantom Dispatch</button>
+    <button onclick="showInfo()">ℹ Info</button>
+    <button onclick="showCredits()">🎬 Credits</button>
+    <button onclick="resetLife()">🗑 Delete Life</button>
+  </div>
+
+  <!-- CREATE LIFE -->
+  <div id="createLife" class="hidden">
+    <h2>Create Your Investigator</h2>
+
+    <input id="playerName" placeholder="Enter Name">
+
+    <select id="characterSelect">
+      <option value="hunter">Ghost Hunter</option>
+      <option value="investigator">Investigator</option>
+      <option value="rookie">Rookie</option>
+    </select>
+
+    <br><br>
+    <button onclick="saveLife()">Save Life</button>
+  </div>
+
+  <!-- INFO -->
+  <div id="info" class="hidden">
+    <h2>Info</h2>
+    <p>
+      You are a paranormal investigator taking jobs, collecting evidence,
+      and reporting ghost activity through Phantom Dispatch.
+    </p>
+    <button onclick="backMenu()">Back</button>
+  </div>
+
+  <!-- CREDITS -->
+  <div id="credits" class="hidden">
+    <h2>Credits</h2>
+    <p>Phantom Dispatch - Indie Horror Project</p>
+    <p>Created by You 👻</p>
+    <button onclick="backMenu()">Back</button>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

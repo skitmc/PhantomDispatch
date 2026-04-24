@@ -1,0 +1,31 @@
+body {
+  background: black;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#menu {
+  margin-top: 50px;
+}
+
+input, select {
+  padding: 10px;
+  margin: 5px;
+  background: #111;
+  color: white;
+  border: 1px solid #444;
+}
